@@ -136,7 +136,7 @@ h6,
     padding: 18px 20px 20px 28px;
     background: #FFFFFF;
 }
-
+  
 .btn-play:before {
     content: "";
     position: absolute;
@@ -333,4 +333,19 @@ h6,
 .bg-img {
     background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
+}
+
+.hero-header h1 {
+  color: var(--light);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #f5a9c2; /* a brighter pink accent */
+}
+.btn-play span {
+    border-left: 16px solid var(--primary);
+}
+.btn-primary {
+    color: #FFFFFF;
+    background-color: var(--primary);
 }
