@@ -499,6 +499,33 @@ html {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     word-break: break-word;
 }
+.btn-read-more {
+    display: inline-block;
+    padding: 0.8rem 1.5rem; /* Relative units for scaling */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Keeps text on one line */
+}
+
+.btn-read-more:hover {
+    background: transparent;
+    color: var(--primary);
+}
+
+/* Responsive tweak */
+@media (max-width: 576px) {
+    .btn-read-more {
+        font-size: 0.9rem;  /* Slightly smaller text */
+        padding: 0.6rem 1.2rem; /* Less padding */
+    }
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -583,4 +610,33 @@ html {
     font-weight: normal; /* no bold */
     color: #ff00cc; /* same pink shade */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@600&family=Allura&display=swap');
+
+.brand-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff; /* White for visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0;
+}
+
+.brand-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #fffaf0; /* Light beige */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    margin: 5px 0 0 0;
+}
+
+.brand-tagline {
+    font-family: 'Allura', cursive;
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    margin-top: 5px;
 }
