@@ -640,3 +640,20 @@ html {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     margin-top: 5px;
 }
+#aboutCarousel {
+  max-height: 300px;
+}
+
+#aboutCarousel .carousel-inner {
+  height: 300px;
+}
+
+#aboutCarousel .carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#aboutCarousel .carousel-item {
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
