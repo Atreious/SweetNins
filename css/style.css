@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FF00FF;
+    --primary: #831d5c;
     --secondary: #FAF3EB;
     --light: #FFFFFF;
     --dark: #2B2825;
@@ -444,3 +444,31 @@ html {
     pointer-events: none;
 }
 
+/* Wrapper to center and apply spacing */
+.logo-wrapper {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(145deg, #ffe4f2, #ffc8e0);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+}
+
+/* Icon styling */
+.cake-icon {
+    font-size: 2.2rem;
+    color: #ff4d94;
+    margin-right: 12px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Main logo text */
+.logo-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    background: linear-gradient(to right, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
