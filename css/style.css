@@ -444,16 +444,22 @@ html {
     pointer-events: none;
 }
 
-/* Logo Container */
 .logo-wrapper {
-    display: inline-block;
-    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
     background: linear-gradient(145deg, #ffe4f2, #ffc8e0);
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
     max-width: 100%;
     overflow: hidden;
 }
+
+/* Remove any white fill */
+.col-lg-4 {
+    background: transparent !important;
+}
+
 
 /* Icon Styling */
 .cake-icon {
