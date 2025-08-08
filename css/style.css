@@ -366,13 +366,16 @@ h6,
 }
 /* Image container with gradient effect at bottom */
 .image-container {
-    position: relative; /* Required for ::after positioning */
+    position: relative;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    width: 340px;
-    height: 220px;
+    width: 100%; /* Full width of its container */
+    max-width: 340px; /* Limit max size on desktop */
+    aspect-ratio: 16 / 10; /* Keeps shape consistent */
+    margin: 0 auto;
 }
+
 
 .styled-img {
     width: 100%;
@@ -392,9 +395,10 @@ h6,
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40%; /* Adjust height to control gradient size */
+    height: 40%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-    pointer-events: none; /* Let mouse events pass through */
+    pointer-events: none;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
+
