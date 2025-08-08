@@ -93,10 +93,3 @@
     
 })(jQuery);
 
-
-  const aboutCarousel = document.querySelector('#aboutCarousel');
-  new bootstrap.Carousel(aboutCarousel, {
-    interval: 2000, // 2 seconds
-    ride: 'carousel'
-  });
-
