@@ -405,3 +405,16 @@ h6,
 html {
   scroll-behavior: smooth;
 }
+@media (max-width: 576px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    h2, h4 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
