@@ -444,31 +444,68 @@ html {
     pointer-events: none;
 }
 
-/* Wrapper to center and apply spacing */
+/* Logo Container */
 .logo-wrapper {
     display: inline-block;
     padding: 10px 20px;
     background: linear-gradient(145deg, #ffe4f2, #ffc8e0);
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+    max-width: 100%;
+    overflow: hidden;
 }
 
-/* Icon styling */
+/* Icon Styling */
 .cake-icon {
     font-size: 2.2rem;
     color: #ff4d94;
     margin-right: 12px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
 }
 
-/* Main logo text */
+/* Logo Text */
 .logo-text {
     font-family: 'Pacifico', cursive;
-    font-size: 2rem;
+    font-size: 1.8rem;
     background: linear-gradient(to right, #ff69b4, #ff1493);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
     letter-spacing: 1px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    word-break: break-word;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .logo-wrapper {
+        padding: 8px 14px;
+        border-radius: 16px;
+    }
+
+    .cake-icon {
+        font-size: 1.6rem;
+        margin-right: 8px;
+    }
+
+    .logo-text {
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-wrapper {
+        padding: 6px 12px;
+    }
+
+    .cake-icon {
+        font-size: 1.4rem;
+        margin-right: 6px;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
 }
