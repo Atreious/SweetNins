@@ -1,10 +1,34 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FF00FF;
+    --primary: #910c91;
     --secondary: #FAF3EB;
     --light: #FFFFFF;
     --dark: #2B2825;
+    --topbar-bg: #FFF7EB; /* soft cream pastel */
+
 }
+/* Pastel background for the topbar */
+.topbar-gradient {
+    background: linear-gradient(
+        to bottom,
+        #e6d0c3 0%,   /* darker beige */
+        #8b6a5a 50%,  /* medium brown */
+        #2B2825 100%  /* dark navbar color */
+    );
+    color: #fff; /* makes all text inside white */
+}
+.topbar {
+    background: linear-gradient(to bottom, #d2b8a3, #2B2825 80%, #2B2825 100%);
+}
+
+.topbar-gradient a {
+    color: #fff;
+}
+
+.topbar-gradient a:hover {
+    color: #ff9dd6; /* light pink on hover */
+}
+
 
 .font-secondary {
     font-family: 'Pacifico', cursive;
@@ -119,10 +143,13 @@ h6,
 
 .hero-header {
     position: relative;
-    background: url(../img/49fb0acf-ec8c-4f0e-8b0b-ce7a8dfa3e2f.jpg) center center no-repeat;
-    background-size: cover;
+    background: url(../img/newbg2.jpeg) center center no-repeat;
+    background-size: 0%; /* zoomed out compared to cover */
+    background-position: center center;
     animation: zoomHero 15s ease-in-out infinite;
 }
+
+
 
 .hero-header::after {
     content: "";
@@ -280,9 +307,16 @@ h6,
 }
 
 .contact::after {
-    background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
+    background: 
+        /* top & bottom fade */
+        linear-gradient(to bottom, rgba(43, 40, 37, 0.8) 0%, rgba(43, 40, 37, 0) 20%, rgba(43, 40, 37, 0) 80%, rgba(43, 40, 37, 0.8) 100%),
+        /* dark overlay */
+        linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)),
+        /* background image */
+        url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
 }
+
 
 .bg-offer {
     background: linear-gradient(rgba(43, 40, 37, .9), rgba(43, 40, 37, .9)), url(../img/offer.jpg) center center no-repeat;
@@ -359,7 +393,13 @@ h6,
 }
 
 .bg-img {
-    background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
+    background: 
+        /* fade top and bottom */
+        linear-gradient(to bottom, rgba(250, 243, 235, 1) 0%, rgba(250, 243, 235, 0) 10%, rgba(250, 243, 235, 0) 90%, rgba(250, 243, 235, 1) 100%),
+        /* dark overlay */
+        linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)),
+        /* background image */
+        url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -669,4 +709,100 @@ html {
 
 #aboutCarousel .carousel-item {
   transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+.about {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #e6d8cc 40%, #2B2825 100%);
+}
+
+.about::before,
+.about::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.about::before {
+    top: 0;
+    background: linear-gradient(to bottom, white, transparent);
+}
+
+.about::after {
+    bottom: 0;
+    background: linear-gradient(to top, white, transparent);
+}
+
+.about > * {
+    position: relative;
+    z-index: 2;
+}
+section {
+    background-color: #2B2825; /* your dark color */
+}
+.stats-section {
+    margin-top: -50px; /* pull into the fade */
+    padding-top: 50px; /* keep content spacing */
+    background-color: transparent;
+}
+.custom-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .custom-card {
+        align-items: flex-start; /* align top edges */
+    }
+    .price-tag {
+        margin-top: 0.5rem; /* small tweak for better vertical spacing */
+    }
+}
+    .button-container {
+    background: 
+        linear-gradient(to bottom, rgba(210, 184, 163, 0.6), rgba(210, 184, 163, 0)), 
+        rgba(210, 184, 163, 0.3); /* fallback light brown base */
+    padding: 10px;
+    border-radius: 5px;
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.styled-img {
+    display: block;
+    margin: 0 auto; /* center in block context */
+    max-width: 100%;
+    height: auto;
+}
+/* Footer logo image responsive */
+.footer-logo {
+    max-width: 120px;  /* logo size */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Footer text styling */
+.footer-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/* Responsive columns on small screens */
+@media (max-width: 768px) {
+    .footer .row > div {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 }
