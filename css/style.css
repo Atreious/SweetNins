@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #910c91;
+    --primary: #bd19bd;
     --secondary: #FAF3EB;
     --light: #FFFFFF;
     --dark: #2B2825;
@@ -144,10 +144,20 @@ h6,
 .hero-header {
     position: relative;
     background: url(../img/newbg2.jpeg) center center no-repeat;
-    background-size: 0%; /* zoomed out compared to cover */
-    background-position: center center;
-    animation: zoomHero 15s ease-in-out infinite;
+    background-size: cover;
+    min-height: 100vh; /* make it take full screen height */
+    padding: 0; /* remove top/bottom padding */
+    margin: 0; /* remove default margins */
 }
+
+.hero-header .container {
+    padding: 0; /* remove inner spacing */
+}
+
+header, .navbar {
+    margin-bottom: 0; /* no gap under navbar */
+}
+
 
 
 
@@ -805,4 +815,15 @@ section {
         text-align: center;
         margin-bottom: 20px;
     }
+}
+.hero-header .btn-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent line break */
+    align-items: center;
+    justify-content: center; /* Center on mobile */
+    gap: 1rem; /* Space between buttons */
+}
+
+.hero-header .btn-play {
+    flex-shrink: 0; /* Prevent shrinking */
 }
