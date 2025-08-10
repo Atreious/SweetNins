@@ -33,6 +33,14 @@
 .font-secondary {
     font-family: 'Pacifico', cursive;
 }
+.hero-header h1.font-secondary {
+    font-size: 3.5rem;
+    background: linear-gradient(45deg, #fc9bc8, #eb70ad); /* pink to soft cream */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+    margin-bottom: 0.5rem;
+}
 
 h1,
 h2,
@@ -143,34 +151,53 @@ h6,
 
 .hero-header {
     position: relative;
-    background: url(../img/newbg2.jpeg) center center no-repeat;
+    min-height: 100vh; /* Full height */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;  /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    overflow: hidden; 
+    z-index: 0;
+}
+
+/* Blurred background */
+.hero-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../img/bg4.jpg") center center no-repeat;
     background-size: cover;
-    min-height: 100vh; /* make it take full screen height */
-    padding: 0; /* remove top/bottom padding */
-    margin: 0; /* remove default margins */
+    filter: blur(6px); /* Increased from 3px to 6px for stronger blur */
+    transform: scale(1.08); /* Slightly bigger to hide blur edges */
+    z-index: -1;
 }
 
-.hero-header .container {
-    padding: 0; /* remove inner spacing */
-}
-
-header, .navbar {
-    margin-bottom: 0; /* no gap under navbar */
-}
-
-
-
-
+/* Darker dim overlay */
 .hero-header::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100%;
-    height: 120px; /* Increase for longer fade */
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 100%);
-    pointer-events: none;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Darker for better text contrast */
+    z-index: 0;
 }
+
+
+/* Make sure hero content is above overlays */
+.hero-header > * {
+    position: relative;
+    z-index: 1;
+    color: #fff; /* Text white for contrast */
+    text-align: center;
+    padding: 1rem;
+}
+
 
 
 /* Zoom keyframes */
@@ -417,8 +444,9 @@ header, .navbar {
   color: var(--light);
   text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
+
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: #f5a9c2; /* a brighter pink accent */
+  color: #e05785; /* a brighter pink accent */
 }
 .btn-play span {
     border-left: 16px solid var(--primary);
@@ -690,7 +718,7 @@ html {
     font-size: 22px;
     letter-spacing: 2px;
     font-weight: 600;
-    color: #fffaf0; /* Light beige */
+    color: #fce4ad91; /* warm cream */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     margin: 5px 0 0 0;
 }
@@ -699,7 +727,7 @@ html {
     font-family: 'Allura', cursive;
     font-size: 32px;
     font-weight: 600;
-    color: #fff;
+    color: #fce4ad91; /* warm cream */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     margin-top: 5px;
 }
@@ -818,12 +846,26 @@ section {
 }
 .hero-header .btn-container {
     display: flex;
-    flex-wrap: nowrap; /* Prevent line break */
     align-items: center;
-    justify-content: center; /* Center on mobile */
-    gap: 1rem; /* Space between buttons */
+    justify-content: center;
+    gap: 2rem; /* bigger gap to avoid touching */
+}
+
+.hero-header .btn-read-more {
+    flex-shrink: 0;
 }
 
 .hero-header .btn-play {
-    flex-shrink: 0; /* Prevent shrinking */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space between play icon and text */
+    flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+    .hero-header .btn-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
