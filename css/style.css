@@ -36,10 +36,10 @@ font-family: 'Pacifico', cursive;
 
 .hero-header h1.font-secondary {
 font-size: 3.5rem;
-    background: linear-gradient(45deg, #fc9bc8, #eb70ad); /* pink to soft cream */
+    background: linear-gradient(45deg, #fa54a2, #eb70ad); /* pink to soft cream */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+    text-shadow: none;
     margin-bottom: 0.5rem;
 }
 
@@ -175,7 +175,7 @@ color: var(--primary);
     background-size: cover;
     filter: blur(6px);
     transform: scale(1.08);
-    z-index: -2;
+    z-index: -0.8;
 }
 
 /* Dark overlay for text */
@@ -338,19 +338,29 @@ position: absolute;
     margin-left: -90px;
     background: var(--primary);
 }
-
 .service::after,
 .contact::after {
-position: absolute;
+    position: absolute;
     content: "";
     width: 100%;
     height: calc(100% - 45px);
     top: 135px;
     left: 0;
-    background: linear-gradient(rgba(43, 40, 37, .9), rgba(43, 40, 37, .9)), url(../img/service.jpg) center center no-repeat;
+    background: 
+        /* fade top and bottom */
+        linear-gradient(
+            to bottom,
+            rgba(250, 243, 235, 1) 0%,
+            rgba(250, 243, 235, 0) 10%,
+            rgba(250, 243, 235, 0) 90%,
+            rgba(250, 243, 235, 1) 100%
+        ),
+        /* soft radial beige-to-brown gradient */
+        radial-gradient(circle at top left, #e8d9cc, #b6a89c);
     background-size: cover;
     z-index: -1;
 }
+
 
 .contact::after {
 background: 
@@ -440,15 +450,14 @@ opacity: 1;
 }
 
 .bg-img {
-background: 
+    background: 
         /* fade top and bottom */
         linear-gradient(to bottom, rgba(250, 243, 235, 1) 0%, rgba(250, 243, 235, 0) 10%, rgba(250, 243, 235, 0) 90%, rgba(250, 243, 235, 1) 100%),
-        /* dark overlay */
-        linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)),
-        /* background image */
-        url(../img/bg.jpg) center center no-repeat;
+        /* soft radial beige-to-brown gradient */
+        radial-gradient(circle at top left, #e8d9cc, #b6a89c);
     background-size: cover;
 }
+
 /* Mobile footer alignment fix */
 @media (max-width: 768px) {
     .footer-section .row.gx-5 {
@@ -742,7 +751,7 @@ font-family: 'Pacifico', cursive; /* matches your existing font style */
 .navbar-brand .brand-text {
 font-family: 'Pacifico', cursive;
     font-size: 1.4rem;
-    color: #ff00ff; /* Magenta pink */
+    color: #6b166b; /* Magenta pink */
     margin-left: 8px;
 }
 
