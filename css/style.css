@@ -39,7 +39,7 @@ font-family: 'Pacifico', cursive;
     background: linear-gradient(45deg, #ff00a8, #b300ff); /* bright magenta to purple */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* gives contrast */
+    text-shadow: none; /* gives contrast */
     margin-bottom: 0.5rem;
 }
 
