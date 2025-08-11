@@ -172,7 +172,7 @@ color: var(--primary);
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("../img/bg4.jpg") center center no-repeat;
+    background: url("../img/newbg2.jpeg") center center no-repeat;
     background-size: cover;
     filter: blur(6px);
     transform: scale(1.08);
