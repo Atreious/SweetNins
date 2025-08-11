@@ -35,13 +35,14 @@ font-family: 'Pacifico', cursive;
 }
 
 .hero-header h1.font-secondary {
-font-size: 3.5rem;
-    background: linear-gradient(45deg, #fa54a2, #eb70ad); /* pink to soft cream */
+    font-size: 3.5rem;
+    background: linear-gradient(45deg, #ff00a8, #b300ff); /* bright magenta to purple */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: none;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* gives contrast */
     margin-bottom: 0.5rem;
 }
+
 
 h1,
 h2,
@@ -787,7 +788,7 @@ font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     letter-spacing: 2px;
     font-weight: 600;
-    color: #fce4ad91; /* warm cream */
+    color: #FFC857; /* warm cream */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
     margin: 5px 0 0 0;
 }
@@ -796,7 +797,7 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Allura', cursive;
     font-size: 32px;
     font-weight: 600;
-    color: #fce4ad91; /* warm cream */
+    color: #FFC857; /* warm cream */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     margin-top: 5px;
 }
